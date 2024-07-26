@@ -25,6 +25,9 @@ export const Container = styled.div`
   background-color: ${offWhite};
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -69,66 +72,88 @@ export const Select = styled.select`
     outline: none;
   }
 `;
-
 export const WeekendGrid = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
 `;
 
 export const WeekendRow = styled.div`
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px; // Add some space between rows
+  gap: 8px;
 `;
 
 export const WeekendDay = styled.div`
   flex: 1;
-  max-width: 250px; // Increase max-width for a more rectangular shape
-  border: 2px solid ${props => props.selected ? tan : sage};
-  border-radius: 25px; // Increase border-radius for more rounded corners
-  padding: 15px 10px;
+  max-width: 120px;
+  border: 1px solid ${props => props.selected ? tan : sage};
+  border-radius: 8px;
+  padding: 6px 4px;
   text-align: center;
   cursor: pointer;
   background-color: ${props => props.selected ? tan : cream};
   color: ${darkBrown};
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100px; // Reduce height to make it more rectangular
-  min-width: 180px; // Add min-width to ensure a minimum size
+  height: 50px;
+  min-width: 80px;
 
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     background-color: ${lightSage};
   }
+
+  @media (max-width: 600px) {
+    max-width: 100px;
+    min-width: 70px;
+    height: 45px;
+    padding: 4px 2px;
+  }
+`;
+
+export const DayDateWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 3px;
 `;
 
 export const DayOfWeek = styled.div`
   font-family: 'Playfair Display', serif;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  margin-bottom: 2px;
   text-transform: uppercase;
   color: ${darkBrown};
+
+  @media (max-width: 600px) {
+    font-size: 0.7rem;
+  }
 `;
 
 export const DateNumber = styled.div`
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1rem;
   font-weight: 500;
   color: ${darkBrown};
+
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+  }
 `;
 
 export const Status = styled.div`
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 2px;
   color: ${props => props.booked ? darkBrown : sage};
+
+  @media (max-width: 600px) {
+    font-size: 0.6rem;
+  }
 `;

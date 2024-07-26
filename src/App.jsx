@@ -9,6 +9,7 @@ import {
   WeekendGrid,
   WeekendRow,
   WeekendDay,
+  DayDateWrapper,
   DayOfWeek,
   DateNumber,
   Status
@@ -67,8 +68,10 @@ const App = () => {
       onClick={() => handleDayClick(date)}
       selected={selectedDays[date.toDateString()]}
     >
-      <DayOfWeek>{date.toLocaleDateString('en-US', { weekday: 'short' })}</DayOfWeek>
-      <DateNumber>{date.getDate()}</DateNumber>
+      <DayDateWrapper>
+        <DayOfWeek>{date.toLocaleDateString('en-US', { weekday: 'short' })}</DayOfWeek>
+        <DateNumber>{date.getDate()}</DateNumber>
+      </DayDateWrapper>
       <Status booked={selectedDays[date.toDateString()]}>
         {selectedDays[date.toDateString()] ? 'Booked' : 'Available'}
       </Status>

@@ -16,6 +16,9 @@ COPY . .
 # Build the app
 RUN npm run build
 
+# Debugging step: List contents of /app
+RUN ls -l /app
+
 # Use Nginx to serve the static files
 FROM nginx:alpine
 
